@@ -1,0 +1,234 @@
+@import "./Variables.scss";
+
+.bbp-forms {
+  min-width: 350px;
+  padding: 5rem 1rem 1rem 1rem;
+
+  .bbp-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    .bbp-birthday {
+      width: 100%;
+    }
+
+    .bbp-password-wrapper {
+      align-items: center;
+      display: flex;
+      gap: 0.25rem;
+
+      &_entries {
+        width: 100%;
+      }
+    }
+
+    label {
+      font-weight: bold;
+
+      a {
+        color: $primary;
+
+        &:hover {
+          color: $hyperlink;
+        }
+      }
+    }
+
+    input,
+    textarea,
+    select {
+      background-color: $white;
+      border: 2px solid $primary;
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+
+      &:focus {
+        border: 2px solid $input-focus;
+        outline: none;
+      }
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    .bbp-validate-terms-and-conditions {
+      display: grid;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .bbp-icons {
+      cursor: pointer;
+    }
+
+    &.btn-bd {
+      display: grid;
+      grid-column: 1;
+    }
+
+    &.btn-align {
+      display: grid;
+      grid-column: 2;
+    }
+  }
+
+  .bbp-gender-align {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .icon-position {
+    position: relative;
+  }
+
+  .calendar-icon,
+  .down-arrow-icon {
+    pointer-events: none;
+    margin-right: 8px;
+    position: absolute;
+    right: 0;
+    top: 66%;
+    transform: translateY(-50%);
+  }
+
+  .eye-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+  }
+
+  .bbp-btn-reset-bd {
+    background-color: $light-gray;
+    border: 2px solid $primary;
+    border-radius: 0.25rem;
+    color: $fail;
+    font-weight: bold;
+    justify-self: end;
+    margin-top: 1rem;
+    padding: 10px 8px;
+
+    &:hover {
+      border-color: $fail;
+    }
+  }
+
+  .bbp-buttons-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+
+    .bbp-btn {
+      &-reset,
+      &-submit {
+        background-color: $light-gray;
+        border: 2px solid $primary;
+        border-radius: 0.25rem;
+        color: $black;
+        font-weight: bold;
+      }
+
+      &-reset {
+        justify-self: end;
+        padding: 10px 8px;
+
+        &:hover {
+          border-color: $fail;
+        }
+      }
+
+      &-submit {
+        padding: 10px 26px;
+
+        &:hover {
+          border-color: $success;
+        }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.bbp-successful-container-height {
+  height: 100%;
+}
+
+.bbp-container {
+  background: linear-gradient(
+    160deg,
+    $background-effect-left 0%,
+    $background-effect-right 100%
+  );
+  position: absolute;
+  width: 100%;
+
+  .error-message {
+    background-color: $fail-background;
+    color: $fail;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .bbp-header {
+    color: $white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    margin-top: 3rem;
+    transition: color 1s cubic-bezier(0.4, 0, 1, 1);
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+@media (min-width: $sm) {
+  .bbp-forms {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3rem auto 3rem auto;
+    max-width: 600px;
+    padding: 1rem;
+
+    .bbp-wrapper {
+      .bbp-validate-terms-and-conditions {
+        margin: 0;
+      }
+    }
+
+    .bbp-btn-reset-bd {
+      justify-self: start;
+      margin: 0;
+    }
+
+    .bbp-buttons-wrapper {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+
+      .bbp-btn {
+        &-reset {
+          padding: 1rem 1rem;
+        }
+
+        &-submit {
+          padding: 1rem 2rem;
+        }
+      }
+    }
+  }
+}

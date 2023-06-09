@@ -1,0 +1,19 @@
+@import "./Variables.scss";
+
+.bbp-success-message-container {
+  background-color: $form-sent-success-background;
+  border-radius: 4px;
+  color: $primary;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
